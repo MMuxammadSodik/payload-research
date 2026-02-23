@@ -6,6 +6,17 @@ This repository contains **research notes and payloads** documented during
 This repository is **educational and research-oriented** and is not intended
 for unauthorized or malicious use.
 
+# All Techniques
+
+- [Privilege-escalation](privilege-escalation/)
+  - [Linux](privilege-escalation/Linux/)
+    - [PATH Abuse](privilege-escalation/linux/PATH_Abuse/)
+    - [Wildcard Abuse](privilege-escalation/linux/Wildcard_Abuse/)
+    - [Cron Job Abuse](privilege-escalation/linux/Cron_Abuse/)
+    - [Docker](privilege-escalation/linux/Docker/)
+    - [LXD](privilege-escalation/linux/LXD/)
+    - [Kernel Exploits](privilege-escalation/linux/Kernel_Exploits/)
+
 ---
 
 ## Purpose
