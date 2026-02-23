@@ -10,12 +10,12 @@ for unauthorized or malicious use.
 
 - [Privilege-escalation](privilege-escalation/)
   - [Linux](privilege-escalation/Linux/)
-    - [PATH Abuse](privilege-escalation/linux/PATH_Abuse/)
-    - [Wildcard Abuse](privilege-escalation/linux/Wildcard_Abuse/)
-    - [Cron Job Abuse](privilege-escalation/linux/Cron_Abuse/)
-    - [Docker](privilege-escalation/linux/Docker/)
-    - [LXD](privilege-escalation/linux/LXD/)
-    - [Kernel Exploits](privilege-escalation/linux/Kernel_Exploits/)
+    - [PATH Abuse](privilege-escalation/Linux/PATH_Abuse/)
+    - [Wildcard Abuse](privilege-escalation/Linux/Wildcard_Abuse/)
+    - [Cron Job Abuse](privilege-escalation/Linux/Cron_Abuse/)
+    - [Docker](privilege-escalation/Linux/Docker/)
+    - [LXD](privilege-escalation/Linux/LXD/)
+    - [Kernel Exploits](privilege-escalation/Linux/Kernel_Exploits/)
 
 ---
 
