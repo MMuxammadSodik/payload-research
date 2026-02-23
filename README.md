@@ -1,11 +1,7 @@
 # Payload Research
 
 This repository contains **research notes and payloads** documented during
-**authorized penetration testing labs and controlled practice environments**.
-
-The primary goal of this repository is to build a structured, personal
-knowledge base focused on **understanding exploitation techniques**, not
-collecting large volumes of payloads.
+**Penetration Testing**.
 
 This repository is **educational and research-oriented** and is not intended
 for unauthorized or malicious use.
@@ -37,17 +33,13 @@ Current and planned areas include:
 - Practical payloads tested in labs
 - High-level defensive considerations
 
-This repository is **not** an exhaustive reference and does not aim to cover
-every possible payload or edge case.
-
 
 Each vulnerability or technique directory typically contains:
 - A conceptual overview
 - Technique-specific notes
 - Practical payloads tested in labs
 - Indicators, limitations, and observations
-- Brief defensive notes
-
+  
 ---
 
 ## Methodology
@@ -57,9 +49,6 @@ Documentation follows a **depth-first approach**:
 - One vulnerability at a time
 - One technique at a time
 - Focus on understanding before expansion
-
-Priority is given to **clarity, correctness, and reproducibility** rather than
-payload quantity.
 
 ---
 
