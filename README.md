@@ -12,7 +12,7 @@ for unauthorized or malicious use.
   - [Linux](privilege-escalation/Linux/)
     - [PATH Abuse](privilege-escalation/Linux/PATH_Abuse/)
     - [Wildcard Abuse](privilege-escalation/Linux/Wildcard_Abuse/)
-    - [Cron Job Abuse](privilege-escalation/Linux/Cron_Abuse/)
+    - [Cron Job Abuse](privilege-escalation/Linux/cron_abuse/)
     - [Docker](privilege-escalation/Linux/Docker/)
     - [LXD](privilege-escalation/Linux/LXD/)
     - [Kernel Exploits](privilege-escalation/Linux/Kernel_Exploits/)
