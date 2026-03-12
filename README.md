@@ -6,20 +6,30 @@ Curated payload collection for **web vulnerabilities** and **privilege escalatio
 
 # Navigation
 
+- [Web Vulnerabilities](#web-vulnerabilities)
+- [Privilege Escalation](#privilege-escalation)
+
 ## Privilege Escalation
 
-- [Linux](#linux)
-  - [CronJob Abuse](#cronjob-abuse)
-  - [WildCard Abuse](#wildcard-abuse)
-  - [Environment Attacks](#environment-attacks)
-  - [Service Attacks](#service-attacks)
+ - [Linux](#linux)
+   - [SUID Binaries](#suid-binaries)
+   - [Sudo Misconfiguration](#sudo-misconfiguration)
+   - [Capabilities Abuse](#capabilities-abuse)
+   - [Writable Files](#writable-files)
+   - [NFS Misconfiguration](#nfs-misconfiguration)
+   - [Kernel Exploits](#kernel-exploits)
+   - [Docker / Container Escape](#docker--container-escape)
+   - [LD_PRELOAD Abuse](#ld_preload-abuse)
 
-- [Windows](#windows)
-  - [User Privileges](#user-privileges)
-  - [Group Privileges](#group-privileges)
-  - [OS Attacks](#os-attacks)
-  - [Credential Hunting](#credential-hunting)
-  - [Windows DLL Hijacking](#windows-dll-hijacking)
+ - [Windows](#windows)
+   - [Unquoted Service Paths](#unquoted-service-paths)
+   - [Weak Service Permissions](#weak-service-permissions)
+   - [Scheduled Task Abuse](#scheduled-task-abuse)
+   - [AlwaysInstallElevated](#alwaysinstallelevated)
+   - [Token Impersonation](#token-impersonation)
+   - [UAC Bypass](#uac-bypass)
+   - [PATH Hijacking](#path-hijacking)
+   - [Registry Misconfiguration](#registry-misconfiguration)
 
 ## Web Vulnerabilities
 
@@ -45,75 +55,6 @@ Curated payload collection for **web vulnerabilities** and **privilege escalatio
 - [CORS Misconfiguration](#cors-misconfiguration)
 - [Race Conditions](#race-conditions)
   
----
-
-# Privilege Escalation
-
-## Linux
-
-### CronJob Abuse
-
-Payloads related to exploiting misconfigured cron jobs.
-
----
-
-### WildCard Abuse
-
-Payloads abusing wildcard expansion in commands like `tar`, `rsync`, etc.
-
----
-
-### Environment Attacks
-
-Techniques abusing environment variables and PATH misconfigurations.
-
----
-
-### Service Attacks
-
-Payloads targeting writable or misconfigured services.
-
----
-
-## Windows
-
-### User Privileges
-
-Payloads leveraging dangerous user privileges such as:
-
-- `SeImpersonatePrivilege`
-- `SeBackupPrivilege`
-- `SeRestorePrivilege`
-
----
-
-### Group Privileges
-
-Abusing group memberships for privilege escalation.
-
----
-
-### OS Attacks
-
-Techniques targeting operating system misconfigurations.
-
----
-
-### Credential Hunting
-
-Payloads used to locate credentials in:
-
-- registry
-- configuration files
-- memory
-- cached credentials
-
----
-
-### Windows DLL Hijacking
-
-Payloads exploiting DLL search order hijacking vulnerabilities.
-
 ---
 
 # Web Vulnerabilities
@@ -366,6 +307,181 @@ Common targets:
 - registration systems
 - coupon redemption
 
+
+# Privilege Escalation
+
+## Linux
+
+### SUID Binaries
+
+Payloads exploiting binaries with the **SUID bit** set that execute with elevated privileges.
+
+Common abuse involves:
+
+- misconfigured system binaries
+- custom SUID programs
+- GTFOBins techniques
+
+---
+
+### Sudo Misconfiguration
+
+Payloads targeting insecure **sudo rules**.
+
+Common scenarios include:
+
+- `NOPASSWD` misconfiguration
+- running dangerous binaries as root
+- wildcard abuse
+
+---
+
+### Capabilities Abuse
+
+Payloads exploiting Linux **file capabilities** that allow privileged actions without full root.
+
+Common capability abuses include:
+
+- `cap_setuid`
+- `cap_dac_read_search`
+- `cap_sys_admin`
+
+---
+
+### Writable Files
+
+Payloads targeting **world-writable files** or configuration files that influence privileged processes.
+
+Examples include:
+
+- service configuration files
+- scripts executed by root
+- system startup files
+
+---
+
+### NFS Misconfiguration
+
+Payloads abusing improperly configured **NFS shares**.
+
+Typical issues include:
+
+- `no_root_squash`
+- writable shared directories
+
+---
+
+### Kernel Exploits
+
+Payloads leveraging vulnerable Linux kernels to escalate privileges.
+
+Often involves:
+
+- public kernel exploits
+- outdated kernel versions
+- misconfigured security modules
+
+---
+
+### Docker / Container Escape
+
+Payloads used to escape containerized environments.
+
+Common targets include:
+
+- mounted Docker socket
+- privileged containers
+- writable host mounts
+
+---
+
+### LD_PRELOAD Abuse
+
+Payloads exploiting the `LD_PRELOAD` environment variable to load malicious shared libraries.
+
+Often possible when:
+
+- running sudo commands
+- vulnerable service execution
+
+## Windows
+
+### Unquoted Service Paths
+
+Payloads exploiting Windows services with **unquoted executable paths**.
+
+Attackers can place malicious executables in writable directories along the path.
+
+---
+
+### Weak Service Permissions
+
+Payloads abusing services where users can:
+
+- modify service binaries
+- restart services
+- change service configuration
+
+---
+
+### Scheduled Task Abuse
+
+Payloads exploiting misconfigured Windows scheduled tasks.
+
+Common issues include:
+
+- writable task executables
+- tasks running as SYSTEM
+
+---
+
+### AlwaysInstallElevated
+
+Payloads exploiting the Windows **AlwaysInstallElevated** policy.
+
+Allows low-privileged users to install MSI packages with SYSTEM privileges.
+
+---
+
+### Token Impersonation
+
+Payloads exploiting privileged tokens to impersonate higher-privileged users.
+
+Commonly abused privileges:
+
+- `SeImpersonatePrivilege`
+- `SeAssignPrimaryTokenPrivilege`
+
+---
+
+### UAC Bypass
+
+Payloads exploiting techniques that bypass **User Account Control** protections.
+
+Common methods include:
+
+- auto-elevated binaries
+- registry hijacking
+- COM interface abuse
+
+---
+
+### PATH Hijacking
+
+Payloads exploiting insecure search paths used by privileged applications.
+
+Attackers place malicious binaries in directories that appear earlier in the PATH.
+
+---
+
+### Registry Misconfiguration
+
+Payloads exploiting insecure registry permissions.
+
+Targets include:
+
+- startup registry keys
+- service registry configurations
 
 # Disclaimer
 
